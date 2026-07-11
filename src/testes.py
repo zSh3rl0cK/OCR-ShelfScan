@@ -55,3 +55,11 @@ def ocr_image(img):
 
     img_ocr = pipeline_preprocessing(img)
     return pytesseract.image_to_string(img_ocr, lang="por")
+
+# testes com a imagem de teste
+if __name__ == "__main__":
+    img = cv2.imread("./samples/witchhat.png")
+    text = ocr_image(img)
+    print(text)
+
+
