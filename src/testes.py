@@ -59,7 +59,8 @@ def ocr_image(img):
 # testes com a imagem de teste
 if __name__ == "__main__":
     img = cv2.imread("./samples/witchhat.png")
+    img_processed = pipeline_preprocessing(img)
+    cv2.imwrite("./samples/processed.png", img_processed)
     text = ocr_image(img)
-    print(text)
-
+    print(text, flush=True)
 
